@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.1" baseProfile="full"
+     width="800" height="470" viewBox="0 0 800 470">
+  <title>Internet communication</title>
+  <desc>Internet communiction block diagram created by Manfred Steiner</desc>
+
+  <defs>
+    <text id="defs-text-HttpData" style="text-anchor:middle; font-family:Sans-Serif; font-size:6px; font-weight:normal;">HTTP Data</text>
+    <text id="defs-text-Data" style="text-anchor:middle; font-family:Sans-Serif; font-size:6px; font-weight:normal;">Data</text>
+    <text id="defs-text-AH" style="text-anchor:middle; font-family:Sans-Serif; font-size:6px; font-weight:normal;">AH</text>
+    <text id="defs-text-TH" style="text-anchor:middle; font-family:Sans-Serif; font-size:6px; font-weight:normal;">TH</text>
+    <text id="defs-text-IH" style="text-anchor:middle; font-family:Sans-Serif; font-size:6px; font-weight:normal;">IH</text>
+    <text id="defs-text-LH" style="text-anchor:middle; font-family:Sans-Serif; font-size:6px; font-weight:normal;">LH</text>
+    <text id="defs-text-ApplicationLayer" style="text-anchor:middle; font-family:Sans-Serif; font-size:8px; font-weight:bold;">Application Layer</text>
+    <text id="defs-text-TransportLayer" style="text-anchor:middle; font-family:Sans-Serif; font-size:8px; font-weight:bold;">Transport Layer</text>
+    <text id="defs-text-LinkLayer" style="text-anchor:middle; font-family:Sans-Serif; font-size:8px; font-weight:bold;">Link Layer</text>
+    <text id="defs-text-IPLayer" style="text-anchor:middle; font-family:Sans-Serif; font-size:8px; font-weight:bold;">Internet Layer</text>
+    <g id="defs-arrow-v25" style="stroke:red; stroke-width:2; fill:red; fill-opacity:1.0;"><line y1="-4" y2="-25"/><path style="stroke-width:0" d="M 0 0 l -3 -9 h 6 Z"/></g>
+    <g id="defs-way-arrow"><path style="stroke:red; stroke-width:0; fill:red; fill-opacity:1.0;" d="M 0 0 l -4 -12 h 8 Z"/></g>
+    <g id="defs-black-arrow"><path style="stroke-width:0; fill:black; fill-opacity:1.0;" d="M 0 0 l -4 -12 h 8 Z"/></g>
+
+    <g id="defs-app-layer">
+      <rect width="80" height="25" style="stroke-width:0px; fill:#ffffff; fill-opacity:1.0; "/>
+      <rect x="2" y="2" width="76" height="21" style="stroke:#c0c0ff; stroke-width:4; fill-opacity:0.0; "/>
+      <rect width="80" height="25" rx="2" ry="2" style="stroke:black; stroke-width:1px; fill-opacity:0.0; "/>
+      <use x="40" y="11" xlink:href="#defs-text-ApplicationLayer"/>
+    </g>
+
+    <g id="defs-transport-layer">
+      <rect width="80" height="25" style="stroke-width:0px; fill:#ffffff; fill-opacity:1.0; "/>
+      <rect x="2" y="2" width="76" height="21" style="stroke:#ffc0c0; stroke-width:4; fill-opacity:0.0; "/>
+      <rect width="80" height="25" rx="2" ry="2" style="stroke:black; stroke-width:1px; fill-opacity:0.0; "/>
+      <use x="40" y="11" xlink:href="#defs-text-TransportLayer"/>
+    </g>
+
+    <g id="defs-internet-layer">
+      <rect width="80" height="25" style="stroke-width:0px; fill:#ffffff; fill-opacity:1.0; "/>
+      <rect x="2" y="2" width="76" height="21" style="stroke:#ffffc0; stroke-width:4; fill-opacity:0.0; "/>
+      <rect width="80" height="25" rx="2" ry="2" style="stroke:black; stroke-width:1px; fill-opacity:0.0; "/>
+      <use x="40" y="11" xlink:href="#defs-text-IPLayer"/>
+    </g>
+
+    <g id="defs-internet-layer-narrow">
+      <rect width="70" height="25" style="stroke-width:0px; fill:#ffffff; fill-opacity:1.0; "/>
+      <rect x="2" y="2" width="66" height="21" style="stroke:#ffffc0; stroke-width:4; fill-opacity:0.0; "/>
+      <rect width="70" height="25" rx="2" ry="2" style="stroke:black; stroke-width:1px; fill-opacity:0.0; "/>
+      <use x="35" y="11" xlink:href="#defs-text-IPLayer"/>
+    </g>
+
+    <g id="defs-link-layer">
+      <rect width="80" height="25" style="stroke-width:0px; fill:#ffffff; fill-opacity:1.0; "/>
+      <rect x="2" y="2" width="76" height="21" style="stroke:#c0ffff; stroke-width:4; fill-opacity:0.0; "/>
+      <rect width="80" height="25" rx="2" ry="2" style="stroke:black; stroke-width:1px; fill-opacity:0.0; "/>
+      <use x="40" y="11" xlink:href="#defs-text-LinkLayer"/>
+    </g>
+
+    <g id="defs-link-layer-narrow">
+      <rect width="70" height="25" style="stroke-width:0px; fill:#ffffff; fill-opacity:1.0; "/>
+      <rect x="2" y="2" width="66" height="21" style="stroke:#c0ffff; stroke-width:4; fill-opacity:0.0; "/>
+      <rect width="70" height="25" rx="2" ry="2" style="stroke:black; stroke-width:1px; fill-opacity:0.0; "/>
+      <use x="35" y="11" xlink:href="#defs-text-LinkLayer"/>
+    </g>
+
+    <g id="defs-frame-data">
+      <rect x="0" width="50" height="9" style="stroke:black; stroke-width:0.0; fill:#c0ffc0; fill-opacity:1.0; "/>
+    </g>
+    <g id="defs-frame-app">
+      <use x="15" xlink:href="#defs-frame-data"/>
+      <rect x="0" width="15" height="9" style="stroke:black; stroke-width:0.0; fill:#c0c0ff; fill-opacity:1.0; "/>    
+    </g>
+    <g id="defs-frame-transport">
+      <use x="15" xlink:href="#defs-frame-app"/>
+      <rect x="0" width="15" height="9" style="stroke:black; stroke-width:0.0; fill:#ffc0c0; fill-opacity:1.0; "/>
+    </g>
+    <g id="defs-frame-internet">
+      <use x="15" xlink:href="#defs-frame-transport"/>
+      <rect x="0" width="15" height="9" style="stroke:black; stroke-width:0.0; fill:#ffffc0; fill-opacity:1.0; "/>
+    </g>
+    <g id="defs-frame-link">
+      <use x="15" xlink:href="#defs-frame-internet"/>
+      <rect x="0" width="15" height="9" style="stroke:black; stroke-width:0.0; fill:#c0ffff; fill-opacity:1.0; "/>
+    </g>
+
+    <g id="defs-host-stack">
+      <g transform="translate(0 -150)">
+        <use xlink:href="#defs-app-layer"/>
+      </g>
+      <g transform="translate(0 -100)">
+        <use xlink:href="#defs-transport-layer"/>
+      </g>
+      <g transform="translate(0 -50)">
+        <use xlink:href="#defs-internet-layer"/>
+      </g>
+      <g transform="translate(0 0)">
+        <use xlink:href="#defs-link-layer"/>
+      </g>
+    </g>
+
+    <g id="defs-frame-client-data">
+      <use xlink:href="#defs-frame-data"/>
+      <use x="25" y="6.5" xlink:href="#defs-text-HttpData"/>
+      <rect x="0" width="50" height="9" style="stroke:black; stroke-width:0.5; fill-opacity:0.0; "/>        
+    </g>
+    <g id="defs-frame-application-ah">
+      <use xlink:href="#defs-frame-app"/>
+      <line x1="15" y1="9" x2="15" y2="0" style="stroke:black; stroke-width:1.0;"/>
+      <use x="7" y="6.5" xlink:href="#defs-text-AH"/>
+      <rect x="0" width="65" height="9" style="stroke:black; stroke-width:0.5; fill-opacity:0.0; "/>        
+    </g>
+    <g id="defs-frame-transport-th">
+      <use xlink:href="#defs-frame-transport"/>
+      <line x1="15" y1="9" x2="15" y2="0" style="stroke:black; stroke-width:1.0;"/>
+      <use x="7" y="6.5" xlink:href="#defs-text-TH"/>
+      <rect x="0" width="80" height="9" style="stroke:black; stroke-width:0.5; fill:#ffc0c0; fill-opacity:0.0; "/>
+    </g>
+    <g id="defs-frame-internet-ih">
+      <use xlink:href="#defs-frame-internet"/>
+      <line x1="15" y1="9" x2="15" y2="0" style="stroke:black; stroke-width:1.0;"/>
+      <use x="7" y="6.5" xlink:href="#defs-text-IH"/>
+      <rect x="0" width="95" height="9" style="stroke:black; stroke-width:0.5; fill:#ffffc0; fill-opacity:0.0; "/>
+    </g>
+    <g id="defs-frame-link-lh">
+      <use xlink:href="#defs-frame-link"/>
+      <line x1="15" y1="9" x2="15" y2="0" style="stroke:black; stroke-width:1.0;"/>
+      <use x="7" y="6.5" xlink:href="#defs-text-LH"/>
+      <rect x="0" width="110" height="9" style="stroke:black; stroke-width:0.5; fill:#c0ffff; fill-opacity:0.0; "/>
+    </g>
+
+    <!-- Client -->
+
+    <g id="defs-client-stack" transform="translate(0,0)"> 
+      <use xlink:href="#defs-host-stack"/>
+      <use x="-20" y="-167" xlink:href="#defs-frame-client-data"/>
+      <use x="-35" y="-117" xlink:href="#defs-frame-application-ah"/>
+      <use x="-50" y="-67" xlink:href="#defs-frame-transport-th"/>
+      <use x="-65" y="-17" xlink:href="#defs-frame-internet-ih"/>
+      <use x="-80" y="33" xlink:href="#defs-frame-link-lh"/>
+    </g>
+
+
+    <!-- Server -->
+
+    <g id="defs-server-stack" transform="translate(0,0)"> 
+      <use xlink:href="#defs-host-stack"/>
+      <use x="50" y="-167" xlink:href="#defs-frame-client-data"/>
+      <use x="50" y="-117" xlink:href="#defs-frame-application-ah"/>
+      <use x="50" y="-67" xlink:href="#defs-frame-transport-th"/>
+      <use x="50" y="-17" xlink:href="#defs-frame-internet-ih"/>
+      <use x="50" y="33" xlink:href="#defs-frame-link-lh"/>
+    </g>
+
+    <!-- Router -->
+
+    <g id="defs-router">
+      <use x="45" y="-132" xlink:href="#defs-frame-transport"/>
+      <rect x="45" y="-132" width="80" height="9" style="stroke:black; stroke-width:0.5; fill-opacity:0.0;"/>
+      <g transform="translate(70,-115)">
+        <rect x="0" y="0" width="30" height="20" style="stroke:black; stroke-width:1; fill:white; fill-opacity:1.0;"/>
+        <text x="15" y="13" style="font-size:10px;">NAT</text>
+      </g>
+      <g transform="translate(0,-40)"> 
+        <g transform="translate(0 -50)">
+          <use xlink:href="#defs-internet-layer"/>
+        </g>
+        <g transform="translate(0 0)">
+          <use xlink:href="#defs-link-layer"/>
+        </g>
+      </g>
+      <g transform="translate(90,-40)">
+        <g transform="translate(0 -50)">
+          <use xlink:href="#defs-internet-layer"/>
+        </g>
+        <g transform="translate(0 0)">
+          <use xlink:href="#defs-link-layer"/>
+        </g>
+      </g>
+    </g>
+
+    <g id="RouterB-L1" transform="translate(290 100)">>
+      <rect width="70" height="15" style="stroke:black; stroke-width:1px; fill:#ffffff; fill-opacity:1.0; "/>
+    </g>
+
+  <g id="internet">
+      <path style="stroke:blue; fill:#e0e0ff; fill-opacity:1.0; stroke-width:2;"
+            d='M 25,60 a 20,20 1 0,0 0,40
+                       a 10,10 0 1 0 30,10
+                       a 10,10 0 1 0 30,10    
+                       a 5,5 0 1 0 20,-10  
+                       a 20,20 1 0,0 0,-45 
+                       a 10,10 1 0,0 -15,-10
+                       a 10,10 1 0,0 -25,-10  
+                       a 15,15 1 0,0 -35,15  
+                       z' />
+      <g transform="translate(0 90)">
+        <g style="fill:#c0e0c0;fill-opacity:1.0;">
+          <ellipse cx="39" cy="0" rx="11" ry="5"/>
+          <ellipse cx="64" cy="0" rx="11" ry="5"/>
+          <ellipse cx="89" cy="0" rx="11" ry="5"/>
+        </g>
+        <g style="stroke:red; stroke-width:1; fill-opacity:0.0;">
+          <path d="M8,0 l12,0 a3,-3 0 0 0 3,-3 l0,-5"/>
+          <path d="M30,-8 l0,5 a3,3 0 0 0 3,3 l12,0 a3,-3 0 0 0 3,-3 l0,-5"/>
+          <path d="M55,-8 l0,5 a3,3 0 0 0 3,3 l12,0 a3,-3 0 0 0 3,-3 l0,-5"/>
+          <path d="M80,-8 l0,5 a3,3 0 0 0 3,3 l12,0 a3,-3 0 0 0 3,-3 l0,-5"/>
+          <path d="M105,-8 l0,5 a3,3 0 0 0 3,3 l20,0"/>
+        </g>
+        <g style="stroke:black; stroke-width:1; fill:#c0c0c0;fill-opacity:1.0;">
+          <rect x="18" y="-18" width="17" height="10"/>
+          <rect x="43" y="-18" width="17" height="10"/>
+          <rect x="68" y="-18" width="17" height="10"/>
+          <rect x="93" y="-18" width="17" height="10"/>    
+        </g>
+        <text x="60" y="-25" style="text-anchor:middle; font-family:Sans-Serif; font-size:12px; font-weight:bold;">Internet</text>
+      </g>
+  </g>
+
+  <g id="frame-way" style="stroke:red; stroke-width:2; fill-opacity:0.0;">
+    <path d="M0,-10 l0,280 a 10,10 0 0 0 10,10
+                  l85,0 a 10,10 0 0 0 10,-10
+                  l0,-135 a 5,-5 0 0 1 5,-5
+                  l80,0 a 5,5 0 0 1 5,5
+                  l0,160 a 10,10 0 0 0 10,10
+                  l 130,0 a 10,-10 0 0 0 10,-10
+                  l 0,-160 a 5,-5 0 0 1 5,-5
+                  l80,0 a 5,5 0 0 1 5,5
+                  l0,135 a 10,10 0 0 0 10,10
+                  l 85,0 a 10,10 0 0 0 10,-10
+                  l 0,-280
+             "/>
+    <g transform="translate(0,40)">
+      <use y="0" xlink:href="#defs-way-arrow"/>
+      <use y="50" xlink:href="#defs-way-arrow"/>
+      <use y="100" xlink:href="#defs-way-arrow"/>
+      <use y="150" xlink:href="#defs-way-arrow"/>
+      <use y="200" xlink:href="#defs-way-arrow"/>
+    </g>
+    <use xlink:href="#defs-way-arrow" transform="translate(60,280) rotate(-90)"/>     
+    <g transform="translate(105,225)">
+      <use xlink:href="#defs-way-arrow" transform="translate(0,0) rotate(-180)"/>
+      <use xlink:href="#defs-way-arrow" transform="translate(0,-50) rotate(-180)"/>
+    </g>
+    <use x="0" y="0" xlink:href="#defs-way-arrow" transform="translate(160,130) rotate(-90)"/>     
+    <g transform="translate(195,190)">
+      <use xlink:href="#defs-way-arrow" transform="translate(0,0) rotate(0)"/>
+      <use xlink:href="#defs-way-arrow" transform="translate(0,50) rotate(0)"/>
+    </g>
+    <g transform="translate(345,225)">
+      <use xlink:href="#defs-way-arrow" transform="translate(0,0) rotate(-180)"/>
+      <use xlink:href="#defs-way-arrow" transform="translate(0,-50) rotate(-180)"/>
+    </g>
+    <use x="0" y="0" xlink:href="#defs-way-arrow" transform="translate(400,130) rotate(-90)"/>     
+    <g transform="translate(435,190)">
+      <use xlink:href="#defs-way-arrow" transform="translate(0,0) rotate(0)"/>
+      <use xlink:href="#defs-way-arrow" transform="translate(0,50) rotate(0)"/>
+    </g>
+    <use xlink:href="#defs-way-arrow" transform="translate(490,280) rotate(-90)"/>         
+    <g transform="translate(540,225)">
+      <use xlink:href="#defs-way-arrow" transform="translate(0,0) rotate(-180)"/>
+      <use xlink:href="#defs-way-arrow" transform="translate(0,-50) rotate(-180)"/>
+      <use xlink:href="#defs-way-arrow" transform="translate(0,-100) rotate(-180)"/>
+      <use xlink:href="#defs-way-arrow" transform="translate(0,-150) rotate(-180)"/>
+      <use xlink:href="#defs-way-arrow" transform="translate(0,-200) rotate(-180)"/>
+    </g>
+  </g>
+
+  <g id="defs-computer">
+    <g style="stroke:grey; stroke-width:1;">
+      <rect x="-25" y="-5" width="50" height="50" rx="5" ry="5" style="stroke-width:0; fill:#ffffff;"/>
+      <rect x="-20" y="0" width="40" height="25" rx="5" ry="5" style="stroke-width:2; fill:#8080ff;"/>
+      <path d="M-15,28 l 30,0 l 5,10 l -40,0 Z" style="fill:#808080;"/>
+      <line x1="-14" y1="30" x2="14" y2="30" style="stroke:white; stroke-dasharray:1,1;"/>
+      <line x1="-15" y1="32" x2="15" y2="32" style="stroke:white; stroke-dasharray:1,1;"/>
+      <line x1="-16" y1="34" x2="16" y2="34" style="stroke:white; stroke-dasharray:1,1;"/>
+      <line x1="-17" y1="36" x2="17" y2="36" style="stroke:white; stroke-dasharray:1,1;"/>
+    </g>
+  </g>>
+
+  <g id="defs-server">
+    <g style="stroke:grey; stroke-width:1;">
+      <rect x="-20" y="0" width="40" height="25" rx="5" ry="5" style="stroke-width:2; fill:#8080ff;"/>
+      <path d="M-15,28 l 30,0 l 5,10 l -40,0 Z" style="fill:#808080;"/>
+      <line x1="-14" y1="30" x2="14" y2="30" style="stroke:white; stroke-dasharray:1,1;"/>
+      <line x1="-15" y1="32" x2="15" y2="32" style="stroke:white; stroke-dasharray:1,1;"/>
+      <line x1="-16" y1="34" x2="16" y2="34" style="stroke:white; stroke-dasharray:1,1;"/>
+      <line x1="-17" y1="36" x2="17" y2="36" style="stroke:white; stroke-dasharray:1,1;"/>
+    </g>
+  </g>>
+
+  </defs>
+
+  <!-- Start of image -->
+
+  <rect x="0" y="0" width="800" height="470" style="fill:#ffffff;"/>
+  <!-- <rect x="1" y="1" width="798" height="468" style="stroke:black; stroke-width:1; fill:#ffffff;"/> -->
+
+  <g transform="translate(10 -20)" style="text-anchor:middle; font-family:Sans-Serif; ">
+
+    <g style="stroke:black; stroke-width:1; fill:#e0e0e0;">
+      <rect id="outline-client" x="-5" y="40" width="170" height="310"/>
+      <rect id="outline-server" x="615" y="40" width="170" height="310"/>
+      <rect id="outline-router1" x="180" y="200" width="180" height="150"/>
+      <rect id="outline-router2" x="420" y="200" width="180" height="150"/>
+    </g>
+
+    <g style="fill:#e0c0c0; fill-opacity:1.0; stroke:black">
+      <g id="network-10.200.80.0" transform="translate(175,395)">
+        <ellipse cx="0" cy="0" rx="70" ry="25"/>
+        <text x="0" y="7" style="stroke-width:0; fill:black; font-size:12px; ">10.200.80.0/24</text>
+      </g>
+      <g id="network-10.200.80.0" transform="translate(605,395)">
+        <ellipse cx="0" cy="0" rx="70" ry="25"/>
+        <text x="0" y="7" style="stroke-width:0; fill:black; font-size:12px; ">172.16.1.0/24</text>
+      </g>
+    </g>
+    <use xlink:href="#frame-way" transform="translate(120,105)"/>
+
+    <use xlink:href="#internet" transform="translate(325,320) "/>
+    <g transform="translate(310,402)"> 
+      <text style="font-size:10px;" transform="rotate(-90)">178.110.132.152/30</text>
+    </g>
+    <g transform="translate(476,399)"> 
+      <text style="font-size:10px;" transform="rotate(-90)">188.20.185.180/30</text>
+    </g>
+
+
+    <g transform="translate(80,300)">
+      <text x="0" y="-265" style="font-size:12px; font-weight:bold;">Client-Host</text>
+      <use xlink:href="#defs-client-stack"/>
+      <g transform="translate(40,-240)">
+        <rect rx="2" ry="2" x="-50" y="15" width="90" height="30" style="fill:white; stroke:black; stroke-width:1;"/>
+        <text x="-5" y="10" style="font-size:10px; font-weight:bold;">Programm</text>
+        <text x="-5" y="27" style="font-size:10px;">Web-Browser</text>
+        <text x="-5" y="38" style="font-size:8px; ">http://188.20.185.182</text>
+        <text x="-85" y="168" style="font-size:6px;">Port: Source 57634</text>
+        <text x="-85" y="190" style="font-size:6px;">Port: Destination 80</text>
+        <text x="-82" y="219" style="font-size:6px;">IPv4: Source 10.200.80.178</text>
+        <text x="-82" y="239" style="font-size:6px;">IPv4: Dest. 188.20.185.182</text>
+        <text x="-82" y="270" style="font-size:6px;">MAC: Dest. 84:c9:b2:6b:e1:af</text>
+      </g>
+      <use x="-45" y="-240" xlink:href="#defs-computer"/>
+      <g transform="translate(40,-131)">
+        <text x="0" y="0" style="font-size:6px; ">Protocol HTTP</text>
+        <text x="0" y="50" style="font-size:6px; ">Port 57634</text>  
+        <text x="0" y="100" style="font-size:6px; ">IPv4: 10.200.80.178</text> 
+        <text x="0" y="150" style="font-size:6px; ">MAC: 52:54:00:e9:1a:82</text> 
+      </g>
+    </g>
+
+    <g transform="translate(185,340)">
+      <text x="85" y="-145" style="font-size:12px; font-weight:bold;">Router 1</text>
+      <use xlink:href="#defs-router"/>
+      <g transform="translate(120,-110)">>
+        <text x="0" y="0" style="font-size:6px; ">Port 51234</text> 
+      </g>
+      <g transform="translate(40,-171)">
+        <text x="0" y="100" style="font-size:6px; ">IPv4: 10.200.80.254</text> 
+        <text x="0" y="150" style="font-size:6px; ">MAC: 84:c9:b2:6b:e1:af</text> 
+      </g>
+      <g transform="translate(130,-171)">
+        <text x="0" y="100" style="font-size:6px; ">IPv4: 178.116.132.154</text> 
+        <text x="0" y="150" style="font-size:6px; ">MAC: 84:c9:b2:6b:e1:af</text> 
+      </g>
+      <line x1="85" y1="-90" x2="85" y2="145" style="stroke:black; stroke-width:0.5; stroke-dasharray:1,1;"/>
+    </g>
+
+    <g transform="translate(425,340)">
+      <text x="85" y="-145" style="font-size:12px; font-weight:bold;">Router 2</text>
+      <use xlink:href="#defs-router"/>
+      <g transform="translate(40,-171)">
+        <text x="0" y="100" style="font-size:6px; ">IPv4: 188.20.185.182</text> 
+        <text x="0" y="150" style="font-size:6px; ">MAC: 00:01:02:89:55:85</text> 
+      </g>
+      <g transform="translate(130,-171)">
+        <text x="0" y="100" style="font-size:6px; ">IPv4: 172.16.1.254</text> 
+        <text x="0" y="150" style="font-size:6px; ">MAC: 00:0f:fe:94:00:40</text> 
+      </g>
+      <line x1="85" y1="-90" x2="85" y2="145" style="stroke:black; stroke-width:0.5; stroke-dasharray:1,1;"/>
+    </g>
+
+    <g transform="translate(620,300)">
+      <text x="80" y="-265" style="font-size:12px; font-weight:bold;">Server-Host</text>
+      <g transform="translate(50,-240)">
+        <rect rx="2" ry="2" x="-50" y="15" width="90" height="30" style="fill:white; stroke:black; stroke-width:1;"/>
+        <text x="-5" y="10" style="font-size:10px; font-weight:bold;">Programm</text>
+        <text x="-5" y="33" style="font-size:10px;">Web-Server</text>
+      </g>
+      <use xlink:href="#defs-server-stack"/>
+      <g transform="translate(125,-240)">
+        <use xlink:href="#defs-computer"/>
+      </g>
+      <g transform="translate(40,-131)">
+        <text x="0" y="0" style="font-size:6px; ">Protocol HTTP</text>
+        <text x="0" y="50" style="font-size:6px; ">Port 80</text>  
+        <text x="0" y="100" style="font-size:6px; ">IPv4: 172.16.1.11</text> 
+        <text x="0" y="150" style="font-size:6px; ">MAC: 60:eb:69:ba:f5:57</text> 
+      </g>
+    </g>
+
+    <g transform="translate(390,480)">
+      <line x1="-370" y1="0" x2="370" y2="0" style="stroke:black;"/>
+      <text x="0" y="-5" style="font-size:12px;">Öffentliche IPv4 Adressen</text>
+      <text x="-250" y="-5" style="font-size:12px;">Private IPv4 Adressen</text>
+      <text x="250" y="-5" style="font-size:12px;">Private IPv4 Adressen</text>
+      <use xlink:href="#defs-black-arrow" transform="translate(-120) rotate(90)"/>
+      <use xlink:href="#defs-black-arrow" transform="translate(-120) rotate(-90)"/>
+      <use xlink:href="#defs-black-arrow" transform="translate(120) rotate(-90)"/>
+      <use xlink:href="#defs-black-arrow" transform="translate(120) rotate(90)"/>
+    </g>
+
+  </g>
+</svg>
